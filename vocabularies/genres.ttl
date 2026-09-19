@@ -1,0 +1,18 @@
+@prefix malo: <https://w3id.org/malo/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+malo:GenreScheme a skos:ConceptScheme ;
+    skos:prefLabel "Malayalam Literary Genres"@en ;
+    skos:prefLabel "മലയാള സാഹിത്യരൂപങ്ങൾ"@ml .
+
+malo:Poetry a skos:Concept ; skos:inScheme malo:GenreScheme ; skos:prefLabel "Poetry"@en ; skos:prefLabel "കവിത"@ml .
+malo:Novel a skos:Concept ; skos:inScheme malo:GenreScheme ; skos:prefLabel "Novel"@en ; skos:prefLabel "നോവൽ"@ml .
+malo:ShortStory a skos:Concept ; skos:inScheme malo:GenreScheme ; skos:prefLabel "Short story"@en ; skos:prefLabel "ചെറുകഥ"@ml .
+malo:Drama a skos:Concept ; skos:inScheme malo:GenreScheme ; skos:prefLabel "Drama"@en ; skos:prefLabel "നാടകം"@ml .
+malo:Essay a skos:Concept ; skos:inScheme malo:GenreScheme ; skos:prefLabel "Essay"@en ; skos:prefLabel "ഉപന്യാസം"@ml .
+malo:Autobiography a skos:Concept ; skos:inScheme malo:GenreScheme ; skos:prefLabel "Autobiography"@en ; skos:prefLabel "ആത്മകഥ"@ml .
+malo:Memoir a skos:Concept ; skos:inScheme malo:GenreScheme ; skos:prefLabel "Memoir"@en ; skos:prefLabel "ഓർമ്മക്കുറിപ്പ്"@ml .
+malo:TravelWriting a skos:Concept ; skos:inScheme malo:GenreScheme ; skos:prefLabel "Travel writing"@en ; skos:prefLabel "യാത്രാവിവരണം"@ml .
+malo:BhaktiLiterature a skos:Concept ; skos:inScheme malo:GenreScheme ; skos:prefLabel "Devotional literature"@en ; skos:prefLabel "ഭക്തി സാഹിത്യം"@ml .
+malo:Manipravalam a skos:Concept ; skos:inScheme malo:GenreScheme ; skos:prefLabel "Manipravalam"@en ; skos:prefLabel "മണിപ്രവാളം"@ml .
+malo:Mappilappattu a skos:Concept ; skos:inScheme malo:GenreScheme ; skos:prefLabel "Mappilappattu"@en ; skos:prefLabel "മാപ്പിളപ്പാട്ട്"@ml .

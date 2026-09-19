@@ -1,0 +1,53 @@
+@prefix malo: <https://w3id.org/malo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+malo: a owl:Ontology ;
+    dcterms:title "Malayalam Literary Ontology (MALO)"@en ;
+    dcterms:description "A lightweight ontology for representing Malayalam literary works, people, places, genres, themes, movements, publications and relationships between works."@en ;
+    dcterms:language "en", "ml" ;
+    owl:versionInfo "0.1.0" .
+
+# Classes
+malo:LiteraryEntity a owl:Class ; rdfs:label "Literary entity"@en ; rdfs:label "സാഹിത്യ ഘടകം"@ml .
+malo:LiteraryWork a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Literary work"@en ; rdfs:label "സാഹിത്യകൃതി"@ml .
+malo:Author a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Author"@en ; rdfs:label "രചയിതാവ്"@ml .
+malo:Character a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Character"@en ; rdfs:label "കഥാപാത്രം"@ml .
+malo:Place a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Place"@en ; rdfs:label "സ്ഥലം"@ml .
+malo:LiteraryGenre a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Literary genre"@en ; rdfs:label "സാഹിത്യരൂപം"@ml .
+malo:LiteraryTheme a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Literary theme"@en ; rdfs:label "സാഹിത്യ പ്രമേയം"@ml .
+malo:LiteraryMovement a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Literary movement"@en ; rdfs:label "സാഹിത്യ പ്രസ്ഥാനം"@ml .
+malo:HistoricalPeriod a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Historical period"@en ; rdfs:label "ചരിത്രകാലഘട്ടം"@ml .
+malo:Publication a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Publication"@en ; rdfs:label "പ്രസിദ്ധീകരണം"@ml .
+malo:Translation a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Translation"@en ; rdfs:label "വിവർത്തനം"@ml .
+malo:Adaptation a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Adaptation"@en ; rdfs:label "അവതരണരൂപാന്തരം"@ml .
+malo:Manuscript a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Manuscript"@en ; rdfs:label "കൈയെഴുത്തുപ്രതി"@ml .
+malo:Motif a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Motif"@en ; rdfs:label "മോട്ടിഫ്"@ml .
+malo:Event a owl:Class ; rdfs:subClassOf malo:LiteraryEntity ; rdfs:label "Event"@en ; rdfs:label "സംഭവം"@ml .
+
+# Object properties
+malo:authorOf a owl:ObjectProperty ; rdfs:domain malo:Author ; rdfs:range malo:LiteraryWork ; rdfs:label "author of"@en ; rdfs:label "രചയിതാവാണ്"@ml .
+malo:hasAuthor a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:Author ; owl:inverseOf malo:authorOf ; rdfs:label "has author"@en ; rdfs:label "രചയിതാവ്"@ml .
+malo:hasCharacter a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:Character ; rdfs:label "has character"@en ; rdfs:label "കഥാപാത്രമുണ്ട്"@ml .
+malo:takesPlaceIn a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:Place ; rdfs:label "takes place in"@en ; rdfs:label "നടക്കുന്ന സ്ഥലം"@ml .
+malo:hasGenre a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:LiteraryGenre ; rdfs:label "has genre"@en ; rdfs:label "സാഹിത്യരൂപം"@ml .
+malo:hasTheme a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:LiteraryTheme ; rdfs:label "has theme"@en ; rdfs:label "പ്രമേയം"@ml .
+malo:hasMotif a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:Motif ; rdfs:label "has motif"@en ; rdfs:label "മോട്ടിഫ്"@ml .
+malo:belongsToMovement a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:LiteraryMovement ; rdfs:label "belongs to movement"@en ; rdfs:label "സാഹിത്യ പ്രസ്ഥാനവുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു"@ml .
+malo:writtenDuring a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:HistoricalPeriod ; rdfs:label "written during"@en ; rdfs:label "രചിക്കപ്പെട്ട കാലഘട്ടം"@ml .
+malo:publishedAs a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:Publication ; rdfs:label "published as"@en .
+malo:translatedInto a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:Translation ; rdfs:label "translated into"@en ; rdfs:label "വിവർത്തനം"@ml .
+malo:adaptedInto a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:Adaptation ; rdfs:label "adapted into"@en ; rdfs:label "രൂപാന്തരം"@ml .
+malo:references a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:LiteraryEntity ; rdfs:label "references"@en ; rdfs:label "പരാമർശിക്കുന്നു"@ml .
+malo:influencedBy a owl:ObjectProperty ; rdfs:domain malo:LiteraryEntity ; rdfs:range malo:LiteraryEntity ; rdfs:label "influenced by"@en ; rdfs:label "സ്വാധീനിക്കപ്പെട്ടത്"@ml .
+malo:alludesTo a owl:ObjectProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range malo:LiteraryEntity ; rdfs:label "alludes to"@en ; rdfs:label "സൂചന നൽകുന്നു"@ml .
+
+# Datatype properties
+malo:title a owl:DatatypeProperty ; rdfs:domain malo:LiteraryWork ; rdfs:range rdf:langString ; rdfs:label "title"@en ; rdfs:label "ശീർഷകം"@ml .
+malo:alternateName a owl:DatatypeProperty ; rdfs:domain malo:LiteraryEntity ; rdfs:range rdf:langString ; rdfs:label "alternate name"@en ; rdfs:label "മറ്റുപേര്"@ml .
+malo:birthYear a owl:DatatypeProperty ; rdfs:domain malo:Author ; rdfs:range xsd:gYear ; rdfs:label "birth year"@en ; rdfs:label "ജനനവർഷം"@ml .
+malo:deathYear a owl:DatatypeProperty ; rdfs:domain malo:Author ; rdfs:range xsd:gYear ; rdfs:label "death year"@en ; rdfs:label "മരണവർഷം"@ml .

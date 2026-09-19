@@ -1,0 +1,16 @@
+@prefix malo: <https://w3id.org/malo/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+malo:ThemeScheme a skos:ConceptScheme ; skos:prefLabel "Malayalam Literary Themes"@en ; skos:prefLabel "മലയാള സാഹിത്യ പ്രമേയങ്ങൾ"@ml .
+
+malo:Love a skos:Concept ; skos:inScheme malo:ThemeScheme ; skos:prefLabel "Love"@en ; skos:prefLabel "പ്രണയം"@ml .
+malo:Death a skos:Concept ; skos:inScheme malo:ThemeScheme ; skos:prefLabel "Death"@en ; skos:prefLabel "മരണം"@ml .
+malo:Nature a skos:Concept ; skos:inScheme malo:ThemeScheme ; skos:prefLabel "Nature"@en ; skos:prefLabel "പ്രകൃതി"@ml .
+malo:Environment a skos:Concept ; skos:inScheme malo:ThemeScheme ; skos:prefLabel "Environment"@en ; skos:prefLabel "പരിസ്ഥിതി"@ml .
+malo:Caste a skos:Concept ; skos:inScheme malo:ThemeScheme ; skos:prefLabel "Caste"@en ; skos:prefLabel "ജാതി"@ml .
+malo:Gender a skos:Concept ; skos:inScheme malo:ThemeScheme ; skos:prefLabel "Gender"@en ; skos:prefLabel "ലിംഗം"@ml .
+malo:Migration a skos:Concept ; skos:inScheme malo:ThemeScheme ; skos:prefLabel "Migration"@en ; skos:prefLabel "കുടിയേറ്റം"@ml .
+malo:Religion a skos:Concept ; skos:inScheme malo:ThemeScheme ; skos:prefLabel "Religion"@en ; skos:prefLabel "മതം"@ml .
+malo:Class a skos:Concept ; skos:inScheme malo:ThemeScheme ; skos:prefLabel "Class"@en ; skos:prefLabel "വർഗ്ഗം"@ml .
+malo:Memory a skos:Concept ; skos:inScheme malo:ThemeScheme ; skos:prefLabel "Memory"@en ; skos:prefLabel "ഓർമ്മ"@ml .
+malo:Exile a skos:Concept ; skos:inScheme malo:ThemeScheme ; skos:prefLabel "Exile"@en ; skos:prefLabel "നാടുകടത്തൽ / പ്രവാസം"@ml .

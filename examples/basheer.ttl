@@ -1,0 +1,30 @@
+@prefix malo: <https://w3id.org/malo/> .
+@prefix ex: <https://w3id.org/malo/resource/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:VaikomMuhammadBasheer a malo:Author ;
+    rdfs:label "വൈക്കം മുഹമ്മദ് ബഷീർ"@ml ;
+    malo:alternateName "Vaikom Muhammad Basheer"@en ;
+    malo:birthYear "1908"^^<http://www.w3.org/2001/XMLSchema#gYear> ;
+    malo:deathYear "1994"^^<http://www.w3.org/2001/XMLSchema#gYear> ;
+    malo:authorOf ex:PathummayudeAadu .
+
+ex:PathummayudeAadu a malo:LiteraryWork ;
+    malo:title "പാത്തുമ്മായുടെ ആട്"@ml ;
+    malo:title "Pathummayude Aadu"@en ;
+    malo:hasAuthor ex:VaikomMuhammadBasheer ;
+    malo:hasGenre malo:Novel ;
+    malo:hasTheme malo:Family ;
+    malo:hasTheme malo:EverydayLife ;
+    malo:takesPlaceIn ex:Vaikom ;
+    malo:hasCharacter ex:Pathumma ;
+    malo:hasCharacter ex:Aadu .
+
+ex:Pathumma a malo:Character ; rdfs:label "പാത്തുമ്മ"@ml .
+ex:Aadu a malo:Character ; rdfs:label "ആട്"@ml .
+ex:Vaikom a malo:Place ; rdfs:label "വൈക്കം"@ml ; malo:alternateName "Vaikom"@en .
+
+# Starter concepts used by this example; these should eventually live in the controlled vocabulary.
+malo:Family a malo:LiteraryTheme ; rdfs:label "Family"@en ; rdfs:label "കുടുംബം"@ml .
+malo:EverydayLife a malo:LiteraryTheme ; rdfs:label "Everyday life"@en ; rdfs:label "ദൈനംദിന ജീവിതം"@ml .
+malo:Novel a malo:LiteraryGenre ; rdfs:label "Novel"@en ; rdfs:label "നോവൽ"@ml .
